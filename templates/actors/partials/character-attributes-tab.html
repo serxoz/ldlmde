@@ -1,0 +1,243 @@
+<section class="attributes-tab flexrow">
+    {{!-- Scores --}}
+    <div class="attribute-group">
+        <div class="modifiers-btn">
+            {{#unless isNew}}
+            <a data-action="modifiers" title="{{localize 'OSE.Modifiers'}}"><i class="fas fa-book"></i></a>
+            {{else}}
+            <a data-action="generate-scores" title="{{localize 'OSE.dialog.generateScores'}}"><i class="fas fa-dice blinking"></i></a>
+            {{/unless}}
+        </div>
+        <ul class="attributes">
+            <li class="attribute ability-score" data-score="str">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.str.check" data-dtype="Boolean" {{checked data.scores.str.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.str.long' }}">
+                    <a>{{ localize "OSE.scores.str.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.str.value" type="text" value="{{data.scores.str.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.str.mod" type="text" value="{{data.scores.str.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            <li class="attribute ability-score" data-score="int">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.int.check" data-dtype="Boolean" {{checked data.scores.int.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.int.long' }}">
+                    <a>{{ localize "OSE.scores.int.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.int.value" type="text" value="{{data.scores.int.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.int.mod" type="text" value="{{data.scores.int.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            <li class="attribute ability-score" data-score="wis">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.wis.check" data-dtype="Boolean" {{checked data.scores.wis.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.wis.long' }}">
+                    <a>{{ localize "OSE.scores.wis.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.wis.value" type="text" value="{{data.scores.wis.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.wis.mod" type="text" value="{{data.scores.wis.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            <li class="attribute ability-score" data-score="dex">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.dex.check" data-dtype="Boolean" {{checked data.scores.dex.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.dex.long' }}">
+                    <a>{{ localize "OSE.scores.dex.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.dex.value" type="text" value="{{data.scores.dex.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.dex.mod" type="text" value="{{data.scores.dex.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            <li class="attribute ability-score" data-score="con">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.con.check" data-dtype="Boolean" {{checked data.scores.con.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.con.long' }}">
+                    <a>{{ localize "OSE.scores.con.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.con.value" type="text" value="{{data.scores.con.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.con.mod" type="text" value="{{data.scores.con.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            <li class="attribute ability-score" data-score="cha">
+                <div class="attribute-check">
+                    <input class="checkbox-round" type="checkbox" name="data.scores.cha.check" data-dtype="Boolean" {{checked data.scores.cha.check}}/>
+                </div>
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.scores.cha.long' }}">
+                    <a>{{ localize "OSE.scores.cha.short" }}</a></h4>
+                <div class="attribute-value">
+                    <input name="data.scores.cha.value" type="text" value="{{data.scores.cha.value}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+                <div class="attribute-bonus">
+                    <input name="data.scores.cha.mod" type="text" value="{{data.scores.cha.mod}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            {{#if data.retainer.enabled}}
+            <li class="attribute ability-score" data-stat="lr">
+                <h4 class="attribute-name box-title" title="{{ localize 'OSE.Loyalty' }}">
+                    <a>{{ localize "OSE.LoyaltyShort" }}</a>
+                </h4>
+                <div class="attribute-value">
+                    <input name="data.retainer.loyalty" type="text" value="{{data.retainer.loyalty}}" placeholder="0"
+                        data-dtype="Number" />
+                </div>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+    {{!-- Resource Tracking --}}
+    <div class="resources">
+        <div class="flexrow">
+            <div class="health">
+                <input class="health-value health-top" name="data.hp.value" type="text" value="{{data.hp.value}}"
+                    data-dtype="Number" placeholder="0" title="{{localize 'OSE.Health'}}" />
+                <input class="health-value health-bottom" name="data.hp.max" type="text" value="{{data.hp.max}}"
+                    data-dtype="Number" placeholder="0" title="{{localize 'OSE.HealthMax'}}" />
+                <div class="health-empty" style="height:{{counter false data.hp.value data.hp.max}}%"></div>
+                <div class="health-full" style="height:{{counter true data.hp.value data.hp.max}}%"></div>
+            </div>
+            <div class="health armor-class">
+                {{#if config.ascendingAC}}
+                <div class="health-value health-top" title="{{localize 'OSE.ArmorClass'}}">{{data.aac.value}}</div>
+                <div class="health-value health-bottom" title="{{localize 'OSE.ArmorClassNaked'}}">
+                    {{data.aac.naked}}</div>
+                    {{#if data.aac.shield}}<div class="shield" title="{{localize 'OSE.items.hasShield'}} ({{data.aac.shield}})"><i
+                            class="fas fa-shield-alt"></i></div>{{/if}}
+                {{else}}
+                <div class="health-value health-top" title="{{localize 'OSE.ArmorClass'}}">{{data.ac.value}}</div>
+                <div class="health-value health-bottom" title="{{localize 'OSE.ArmorClassNaked'}}">
+                    {{data.ac.naked}}</div>
+                    {{#if data.ac.shield}}<div class="shield" title="{{localize 'OSE.items.hasShield'}} ({{data.ac.shield}})"><i
+                            class="fas fa-shield-alt"></i></div>{{/if}}
+                {{/if}}
+            </div>
+        </div>
+        <div class="flexrow">
+            <ul class="attributes flexrow">
+                <li class="attribute hit-dice">
+                    <h4 class="attribute-name box-title" title="{{ localize 'OSE.HitDice' }}">
+                        <a>{{ localize "OSE.HitDiceShort" }}</a>
+                    </h4>
+                    <div class="attribute-value">
+                        <input name="data.hp.hd" type="text" value="{{data.hp.hd}}" placeholder=""
+                            data-dtype="String" />
+                    </div>
+                </li>
+                {{#if config.initiative}}
+                <li class="attribute">
+                    <h4 class="attribute-name box-title" title="{{ localize 'OSE.Initiative' }}">
+                        {{ localize "OSE.InitiativeShort" }}</h4>
+                    <div class="attribute-value"
+                        title="{{localize 'OSE.scores.dex.long'}}({{data.scores.dex.init}}) + {{localize 'OSE.Modifier'}}({{data.initiative.mod}})">
+                        {{add data.scores.dex.init data.initiative.mod}}
+                    </div>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="flexrow">
+            <ul class="attributes flexrow">
+                <li class="attribute attribute-secondaries attack" data-attack="melee">
+                    <h4 class="attribute-name box-title" title="{{localize 'OSE.Melee'}}">
+                        <a>{{localize 'OSE.MeleeShort'}}</a></h4>
+                    <div class="flexrow">
+                        <div class="attribute-value"
+                            title="{{localize 'OSE.scores.str.long'}}({{data.scores.str.mod}}) + {{localize 'OSE.Modifier'}}({{data.thac0.mod.melee}})">
+                            {{add data.scores.str.mod data.thac0.mod.melee}}
+                        </div>
+                    </div>
+                </li>
+                {{#if config.ascendingAC}}
+                <li class="attribute">
+                    <h4 class="attribute-name box-title" title="{{ localize 'OSE.AB' }}">{{ localize "OSE.ABShort"}}
+                    </h4>
+                    <div class="flexrow">
+                        <div class="attribute-value">
+                            <input name="data.thac0.bba" type="text" value="{{data.thac0.bba}}" placeholder="0"
+                                data-dtype="Number" />
+                        </div>
+                    </div>
+                </li>
+                {{else}}
+                <li class="attribute">
+                    <h4 class="attribute-name box-title" title="{{ localize 'OSE.Thac0' }}">{{ localize "OSE.Thac0"}}
+                    </h4>
+                    <div class="flexrow">
+                        <div class="attribute-value">
+                            <input name="data.thac0.value" type="text" value="{{data.thac0.value}}" placeholder="0"
+                                data-dtype="Number" />
+                        </div>
+                    </div>
+                </li>
+                {{/if}}
+                <li class="attribute attribute-secondaries attack" data-attack="missile">
+                    <h4 class="attribute-name box-title" title="{{localize 'OSE.Missile'}}">
+                        <a>{{localize 'OSE.MissileShort'}}</a></h4>
+                    <div class="flexrow">
+                        <div class="attribute-value"
+                            title="{{localize 'OSE.scores.dex.long'}}({{data.scores.dex.mod}}) + {{localize 'OSE.Modifier'}}({{data.thac0.mod.missile}})">
+                            {{add data.scores.dex.mod data.thac0.mod.missile}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="flexrow">
+            <ul class="attributes flexrow">
+                <li class="attribute attribute-secondaries">
+                    <h4 class="attribute-name box-title" title="{{localize 'OSE.movement.overland.long'}}">
+                        {{localize 'OSE.movement.overland.short'}}</h4>
+                    <div class="flexrow">
+                        <div class="attribute-value">
+                            {{divide data.movement.base 5}}
+                        </div>
+                    </div>
+                </li>
+                <li class="attribute">
+                    <h4 class="attribute-name box-title" title="{{ localize 'OSE.movement.exploration.long' }}">
+                        {{ localize "OSE.movement.exploration.short" }}</h4>
+                    <div class="attribute-value flexrow">
+                        <input name="data.movement.base" type="text" value="{{data.movement.base}}" placeholder="0"
+                            data-dtype="Number" {{#if data.config.movementAuto}}disabled{{/if}} />
+                    </div>
+                </li>
+                <li class="attribute attribute-secondaries">
+                    <h4 class="attribute-name box-title" title="{{localize 'OSE.movement.encounter.long'}}">
+                        {{localize 'OSE.movement.encounter.short'}}</h4>
+                    <div class="flexrow">
+                        <div class="attribute-value">
+                            {{divide data.movement.base 3}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

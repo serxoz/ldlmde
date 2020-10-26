@@ -1,0 +1,221 @@
+{
+  "Actor": {
+    "types": ["character", "monster"],
+    "templates": {
+      "common": {
+        "retainer": {
+          "enabled": false,
+          "loyalty": 0,
+          "wage": ""
+        },
+        "hp": {
+          "hd": "1d8",
+          "value": 20,
+          "max": 20
+        },
+        "ac": {
+          "value": 0,
+          "mod": 0
+        },
+        "aac": {
+          "value": 0,
+          "mod": 0
+        },
+        "thac0": {
+          "value": 1,
+          "bba": 1,
+          "mod": {
+            "missile": 0,
+            "melee": 0
+          }
+        },
+        "movement": {
+          "base": 120
+        },
+        "initiative": {
+          "value": 0,
+          "mod": 0
+        }
+      },
+      "spellcaster": {
+        "spells": {
+          "enabled": true,
+          "1": {
+            "max": 0
+          },
+          "2": {
+            "max": 0
+          },
+          "3": {
+            "max": 0
+          },
+          "4": {
+            "max": 0
+          },
+          "5": {
+            "max": 0
+          },
+          "6": {
+            "max": 0
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": ["common", "spellcaster"],
+      "config": {
+        "movementAuto": true
+      },
+      "details": {
+        "biography": "",
+        "notes": "",
+        "class": "",
+        "title": "",
+        "alignment": "",
+        "level": 1,
+        "xp": {
+          "share": 100,
+          "next": 2000,
+          "value": 0,
+          "bonus": 0
+        }
+      },
+      "exploration": {
+        "ld": 1,
+        "od": 1,
+        "sd": 1,
+        "ft": 1
+      },
+      "scores": {
+        "str": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        },
+        "int": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        },
+        "wis": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        },
+        "dex": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        },
+        "con": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        },
+        "cha": {
+          "check": false,
+          "value": 0,
+          "bonus": 0
+        }
+      },
+      "encumbrance": {
+        "max": 50
+      },
+      "languages": {
+        "value": []
+      }
+    },
+    "monster": {
+      "templates": ["common", "spellcaster"],
+      "details": {
+        "biography": "",
+        "alignment": "",
+        "xp": 0,
+        "treasure": {
+          "table": "",
+          "type": ""
+        },
+        "appearing": {
+          "d": 0,
+          "w": 0
+        },
+        "morale": 0
+      },
+      "attacks": "",
+      "saves": {
+          "physical": {
+            "value": false 
+          },
+          "mental": {
+            "value": false 
+          }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "weapon", "armor", "spell", "ability"],
+    "item": {
+      "description": "",
+      "quantity": {
+        "value": 1,
+        "max": 0
+      },
+      "treasure": false,
+      "cost": 0,
+      "weight": 0
+    },
+    "weapon": {
+      "range": {
+        "short": 0,
+        "medium": 0,
+        "long": 0
+      },
+      "save": "",
+      "pattern": "transparent",
+      "description": "",
+      "damage": "1d4",
+      "bonus": 0,
+      "tags": [],
+      "magic": false,
+      "missile": false,
+      "melee": true,
+      "cost": 0,
+      "equipped": true,
+      "weight": 1,
+      "counter": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "armor": {
+      "description": "",
+      "ac": 9,
+      "aac": 10,
+      "type": "light",
+      "cost": 0,
+      "equipped": false,
+      "weight": 1
+    },
+    "spell": {
+      "lvl": 1,
+      "class": "Magic-User",
+      "duration": "",
+      "range": "",
+      "roll": "",
+      "description": "",
+      "memorized": 0,
+      "cast": 0,
+      "save": ""
+    },
+    "ability": {
+      "pattern": "white",
+      "requirements": "",
+      "roll": "",
+      "rollType": "result",
+      "rollTarget": 0,
+      "blindroll": false,
+      "description": "",
+      "save": ""
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ldlmde",
+  "title": "Leyendas de la Marca del Este",
+  "description": "Leyendas de la Marca del Este, un fork basado en el módulo para OSE.",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.5",
+  "templateVersion": 1,
+  "author": "Sergio Cotelo",
+  "esmodules": ["ose.js"],
+  "styles": ["ose.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+  	"lang": "es",
+    "name": "Spanish",
+    "path": "lang/es.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
