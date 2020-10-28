@@ -250,7 +250,7 @@
   "OSE.messages.AttackAscendingSuccess": "<b>Golpea CA {result}!</b>",
   "OSE.messages.AttackFailure": "<b>El Ataque falla</b> ({bonus})",
   "OSE.messages.AttackAscendingFailure": "<b>El Ataque falla</b>",
-  "OSE.messages.InflictsDamage": "Inflige dañon!",
+  "OSE.messages.InflictsDamage": "Inflige daño!",
   "OSE.messages.applyDamage": "Aplica el Daño",
   "OSE.messages.applyHealing": "Aplica la Curación",
 

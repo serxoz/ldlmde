@@ -424,6 +424,9 @@ export class OseActor extends Actor {
         data.scores.str.mod.toString(),
         data.thac0.mod.melee.toString()
       );
+      dmgParts.push(
+        data.scores.str.mod.toString(),
+      );
     }
     if (attData.item && attData.item.data.bonus) {
       rollParts.push(attData.item.data.bonus);
