@@ -94,9 +94,9 @@
 .ose.sheet.actor .sheet-tabs {
   position: absolute;
   transform: rotate(90deg);
-  top: 365px;
-  right: -169px;
-  width: 320px;
+  top: 224px;
+  right: -221px;
+  width: 420px;
   z-index: -1;
   border-top: none;
 }
