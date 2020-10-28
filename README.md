@@ -16,7 +16,4 @@ Los iconos usados son libres para el uso - https://game-icons.net/
 
 Contacto para errores o sugerencias: @serxoz en twitter
 
----
-TODO:
-Los ataques a melé no suman el bonificador de fuerza al daño.
 
