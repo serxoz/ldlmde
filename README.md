@@ -16,4 +16,3 @@ Los iconos usados son libres para el uso - https://game-icons.net/
 
 Contacto para errores o sugerencias: @serxoz en twitter
 
-
