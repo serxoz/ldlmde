@@ -51,7 +51,7 @@ export class OseActorSheetMonster extends OseActorSheet {
       buttons: {
         ok: {
           label: game.i18n.localize("OSE.Ok"),
-          icon: '<i class="fas fa-check"></i>',
+            icon: '<i class="fas fa-check"></i>',
           callback: (html) => {
             let hd = html.find('select[name="choice"]').val();
             this.actor.generateSave(hd);
@@ -106,15 +106,15 @@ export class OseActorSheetMonster extends OseActorSheet {
   /* -------------------------------------------- */
 
   async _chooseItemType(choices = ["weapon", "armor", "shield", "gear"]) {
-    let templateData = { upper: "", lower: "", types: choices },
+    let templateData = { types: choices },
       dlg = await renderTemplate(
-        "templates/sidebar/entity-create.html",
+          "systems/ldlmde/templates/items/entity-create.html",
         templateData
       );
     //Create Dialog window
     return new Promise((resolve) => {
       new Dialog({
-        title: "",
+        title: game.i18n.localize("OSE.dialog.createItem"),
         content: dlg,
         buttons: {
           ok: {
