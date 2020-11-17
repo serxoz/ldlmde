@@ -2,7 +2,7 @@
   "name": "ldlmde",
   "title": "Leyendas de la Marca del Este",
   "description": "Leyendas de la Marca del Este, un fork rápido y sucio basado en el módulo para OSE.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.5",
   "templateVersion": 1,
@@ -26,5 +26,5 @@
   "gridUnits": "ft",
   "url": "https://github.com/serxoz/ldlmde/",
   "manifest": "https://raw.githubusercontent.com/serxoz/ldlmde/main/system.json",
-  "download": "https://github.com/serxoz/ldlmde/archive/1.0.5.zip"
+  "download": "https://github.com/serxoz/ldlmde/archive/1.0.6.zip"
 }
