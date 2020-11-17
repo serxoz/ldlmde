@@ -77,12 +77,12 @@ export class OseActorSheetMonster extends OseActorSheet {
 
     // Settings
     data.config.morale = game.settings.get("ose", "morale");
-    data.data.details.treasure.link = TextEditor.enrichHTML(data.data.details.treasure.table);
+    //data.data.details.treasure.link = TextEditor.enrichHTML(data.data.details.treasure.table);
     data.isNew = this.actor.isNew();
     return data;
   }
 
-
+  /*
   async _onDrop(event) {
     super._onDrop(event);
     let data;
@@ -102,7 +102,7 @@ export class OseActorSheetMonster extends OseActorSheet {
     }
     this.actor.update({ "data.details.treasure.table": link });
   }
-
+  */
   /* -------------------------------------------- */
 
   async _chooseItemType(choices = ["weapon", "armor", "shield", "gear"]) {

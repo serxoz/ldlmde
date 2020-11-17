@@ -4,22 +4,24 @@
     <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'OSE.Name'}}" />
   </h1>
   <ul class="summary flexrow">
-    <li class="flex2 flexrow check-field">
+    <li class="flexrow check-field">
       <div>
         <input type="text" name="data.details.alignment" value="{{data.details.alignment}}" />
         <label>{{localize 'OSE.details.alignment'}}</label>
       </div>
       <div class="check reaction-check" title="{{localize 'OSE.roll.reaction'}}"><a><i class="fas fa-dice"></i></a></div>
     </li>
+    <li class="flexrow check-field">
+      <div>
+        <input type="text" name="data.details.type" value="{{data.details.type}}" />
+        <label>{{localize 'OSE.details.type'}}</label>
+      </div>
+    </li>
     <li class="flexrow check-field" data-check="dungeon">
       <div>
         <input type="text" name="data.details.appearing.d" value="{{data.details.appearing.d}}" />
         <label>{{localize 'OSE.details.appearing'}}</label>
       </div>
-      <div class="check appearing-check" title="{{localize 'OSE.roll.appearing'}}"><a><i class="fas fa-dice"></i></a></div>
-    </li>
-    <li class="flexrow check-field" data-check="wilderness">
-        (<div><input type="text" name="data.details.appearing.w" value="{{data.details.appearing.w}}" /></div>)
       <div class="check appearing-check" title="{{localize 'OSE.roll.appearing'}}"><a><i class="fas fa-dice"></i></a></div>
     </li>
     {{#if config.morale}}
@@ -34,12 +36,22 @@
   </ul>
   <ul class="summary flexrow">
     <li>
+      <input type="text" name="data.details.size" value="{{data.details.size}}" />
+      <label>{{localize 'OSE.details.experience.size'}}</label>
+    </li>
+    <li>
+      <input type="text" name="data.details.intelligence" value="{{data.details.intelligence}}" />
+      <label>{{localize 'OSE.details.experience.intelligence'}}</label>
+    </li>
+  </ul>
+  <ul class="summary flexrow">
+    <li>
       <input type="text" name="data.details.xp" value="{{data.details.xp}}" />
       <label>{{localize 'OSE.details.experience.award'}}</label>
     </li>
-    <li class="treasure-table" title="{{localize 'OSE.details.treasureTableHint'}}">
-      <div>{{{data.details.treasure.link}}}</div>
-      <label>{{localize 'OSE.details.treasure'}}</label>
+    <li>
+      <input type="text" name="data.details.treasure.value" value="{{data.details.treasure.value}}" />
+      <label>{{localize 'OSE.details.treasure.value'}}</label>
     </li>
   </ul>
 </section>

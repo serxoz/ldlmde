@@ -128,18 +128,23 @@
     "monster": {
       "templates": ["common", "spellcaster"],
       "details": {
+        "type": "",
         "biography": "",
         "alignment": "",
         "xp": 0,
         "treasure": {
           "table": "",
-          "type": ""
+          "type": "",
+          "value": ""
         },
         "appearing": {
           "d": 0,
           "w": 0
         },
-        "morale": 0
+        "morale": 0,
+        "size": "",
+        "intelligence": ""
+
       },
       "attacks": "",
       "saves": {
