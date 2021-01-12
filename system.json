@@ -1,7 +1,7 @@
 {
   "name": "ldlmde",
   "title": "Leyendas de la Marca del Este",
-  "description": "Leyendas de la Marca del Este, un fork rápido y sucio basado en el módulo para OSE.",
+  "description": "Implementación del sistema de juego Leyendas de la Marca del Este para Foundry Virtual Tabletop.",
   "version": "1.0.6",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.5",
@@ -22,8 +22,8 @@
     "path": "lang/es.json"
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridDistance": 1.5,
+  "gridUnits": "m",
   "url": "https://github.com/serxoz/ldlmde/",
   "manifest": "https://raw.githubusercontent.com/serxoz/ldlmde/main/system.json",
   "download": "https://github.com/serxoz/ldlmde/archive/1.0.6.zip"
