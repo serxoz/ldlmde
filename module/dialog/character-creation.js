@@ -104,7 +104,7 @@ export class OseCharacterCreator extends FormApplication {
     });
   }
 
-  async close() {
+  async close(options) {
     super.close();
     // Gather scores
     let scores = {};
@@ -127,6 +127,7 @@ export class OseCharacterCreator extends FormApplication {
       content: content,
       speaker,
     });
+    return super.close(options);
   }
 
   /** @override */

@@ -9,3 +9,6 @@ Fixed Item creation dialog on monsters
 
 ** Version 1.0.6
 Monster sheet complete
+
+** Version 1.0.7
+- Fix creation dialog not closing.
