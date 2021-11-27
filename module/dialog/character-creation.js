@@ -105,7 +105,6 @@ export class OseCharacterCreator extends FormApplication {
   }
 
   async close(options) {
-    super.close();
     // Gather scores
     let scores = {};
     $(this.form.children).find(".score-roll").each((_, d) => {

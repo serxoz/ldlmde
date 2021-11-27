@@ -127,7 +127,7 @@ export class OseActor extends Actor {
       details: game.i18n.format("OSE.roll.details.save", { save: label }),
     };
 
-    let skip = options.event && options.event.ctrlKey;
+   let skip = options?.event?.ctrlKey || options.fastForward;
 
     // Roll and return
     return OseDice.Roll({
@@ -138,6 +138,7 @@ export class OseActor extends Actor {
       speaker: ChatMessage.getSpeaker({ actor: this }),
       flavor: game.i18n.format("OSE.roll.save", { save: label }),
       title: game.i18n.format("OSE.roll.save", { save: label }),
+      chatMessage: options.chatMessage
     });
   }
 
@@ -245,7 +246,7 @@ export class OseActor extends Actor {
       }),
     };
 
-    let skip = options.event && options.event.ctrlKey;
+    let skip = options?.event?.ctrlKey || options.fastForward;
 
     // Roll and return
     return OseDice.Roll({
@@ -256,6 +257,7 @@ export class OseActor extends Actor {
       speaker: ChatMessage.getSpeaker({ actor: this }),
       flavor: game.i18n.format("OSE.roll.attribute", { attribute: label }),
       title: game.i18n.format("OSE.roll.attribute", { attribute: label }),
+      chatMessage: options.chatMessage
     });
   }
 
