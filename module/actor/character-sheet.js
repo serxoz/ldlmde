@@ -46,11 +46,14 @@ export class OseActorSheetCharacter extends OseActorSheet {
    * The prepared data object contains both the actor data as well as additional sheet options
    */
   getData() {
-    const data = super.getData();
+    const data = foundry.utils.deepClone(this.actor.data);
+    console.log(data);
+    // this._prepareItems();
 
-    data.config.ascendingAC = game.settings.get("ose", "ascendingAC");
-    data.config.initiative = game.settings.get("ose", "initiative") != "group";
-    data.config.encumbrance = game.settings.get("ose", "encumbranceOption");
+    //FIX
+    // data.config.ascendingAC = game.settings.get("ose", "ascendingAC");
+    // data.config.initiative = game.settings.get("ose", "initiative") != "group";
+    // data.config.encumbrance = game.settings.get("ose", "encumbranceOption");
 
     data.isNew = this.actor.isNew();
     return data;
@@ -119,7 +122,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
   async _onQtChange(event) {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.actor.items.get(itemId);
     return item.update({ "data.quantity.value": parseInt(event.target.value) });
   }
 
@@ -142,7 +145,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
     // Update Inventory Item
     html.find(".item-edit").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
@@ -186,7 +189,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
     //Toggle Equipment
     html.find(".item-toggle").click(async (ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
       await this.actor.updateOwnedItem({
         _id: li.data("itemId"),
         data: {
