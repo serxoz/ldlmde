@@ -49,7 +49,6 @@ export class OseActorSheetCharacter extends OseActorSheet {
     const data = super.getData();
     // Prepare owned items
     this._prepareItems(data);
-    data.isNew = this.actor.isNew();
     return data;
   }
 
@@ -178,7 +177,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
         data: duplicate(header.dataset),
       };
       delete itemData.data["type"];
-      return this.actor.createOwnedItem(itemData);
+      return this.actor.createEmbeddedDocument("Item", itemData);
     });
 
     //Toggle Equipment
