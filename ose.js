@@ -74,6 +74,14 @@ Hooks.once("setup", function () {
   for (let l of CONFIG.OSE.languages) {
     CONFIG.OSE.languages[l] = game.i18n.localize(CONFIG.OSE.languages[l]);
   }
+
+  // Custom languages
+  const languages = game.settings.get("ose", "languages");
+  if (languages != "") {
+    const langArray = languages.split(',');
+    langArray.forEach((l, i) => langArray[i] = l.trim())  
+    CONFIG.OSE.languages = langArray;
+  }
 });
 
 Hooks.once("ready", async () => {

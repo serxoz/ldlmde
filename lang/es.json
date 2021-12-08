@@ -13,11 +13,13 @@
 
   "OSE.dialog.tweaks": "Opciones",
   "OSE.dialog.partysheet": "Resumen del Grupo",
-  "OSE.dialog.selectActors": "Seleccionar PJs",
+  "OSE.dialog.partyselect": "Seleccionar PJs",
   "OSE.dialog.createItem": "Crear Item",
   "OSE.dialog.itemType": "Tipo",
   "OSE.dialog.itemName": "Nombre",
   "OSE.dialog.dealXP": "Repartir PX",
+  "OSE.dialog.xp.deal": "Distribuir PX",
+  "OSE.dialog.xp.label": "PX",
   "OSE.dialog.generator": "Generador de Personaje",
   "OSE.dialog.generateSaves": "Generar Salvaciones",
   "OSE.dialog.generateScores": "Generar Puntuaciones",
@@ -180,6 +182,8 @@
   "OSE.Setting.MovementAuto": "Calcula el Movimiento",
   "OSE.Setting.SignificantTreasure": "Carga Significativa de Tesoro",
   "OSE.Setting.SignificantTreasureHint": "Peso de tesoro al cual se reducirá el movimiento, solo es útil con el tipo Basica",
+  "OSE.Setting.Languages": "Idiomas",
+  "OSE.Setting.LanguagesHint": "Introduce una lista de idiomas separada por comas",
 
   "OSE.items.Equip": "Equipar",
   "OSE.items.Unequip": "Quitar",
