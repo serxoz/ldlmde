@@ -93,7 +93,7 @@
                 <ol class="item-list resizable" data-base-size="240">
                     {{#each abilities as |item|}}
                     <li class="item-entry">
-                        <div class="item flexrow" data-item-id="{{item._id}}">
+                        <div class="item flexrow" data-item-id="{{item.id}}">
                             <div class="item-pattern" title="{{localize 'OSE.items.pattern'}}" style="background:linear-gradient(0.25turn, {{item.data.pattern}}, transparent)"></div>
                             <div class="item-name {{#if item.data.roll}}item-rollable{{/if}} flexrow">
                                 <div class="item-image" style="background-image: url({{item.img}})"></div>
@@ -117,7 +117,7 @@
                     {{#each owned as |section| }}
                     {{#each section as |item|}}
                     <li class="item-entry">
-                        <div class="item flexrow" data-item-id="{{item._id}}">
+                        <div class="item flexrow" data-item-id="{{item.id}}">
                             {{#if (eq item.type 'weapon')}}
                             <div class="item-pattern" title="{{localize 'OSE.items.pattern'}}" style="background:linear-gradient(0.25turn, {{item.data.pattern}}, transparent)"></div>
                             {{/if}}

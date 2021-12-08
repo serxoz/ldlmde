@@ -18,7 +18,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
    * @returns {Object}
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["ose", "sheet", "actor", "character"],
       template: "systems/ldlmde/templates/actors/character-sheet.html",
       width: 450,
@@ -46,15 +46,9 @@ export class OseActorSheetCharacter extends OseActorSheet {
    * The prepared data object contains both the actor data as well as additional sheet options
    */
   getData() {
-    const data = foundry.utils.deepClone(this.actor.data);
-    console.log(data);
-    // this._prepareItems();
-
-    //FIX
-    // data.config.ascendingAC = game.settings.get("ose", "ascendingAC");
-    // data.config.initiative = game.settings.get("ose", "initiative") != "group";
-    // data.config.encumbrance = game.settings.get("ose", "encumbranceOption");
-
+    const data = super.getData();
+    // Prepare owned items
+    this._prepareItems(data);
     data.isNew = this.actor.isNew();
     return data;
   }
@@ -94,6 +88,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
   }
 
   _pushLang(table) {
+    console.log(this);
     const data = this.actor.data.data;
     let update = duplicate(data[table]);
     this._chooseLang().then((dialogInput) => {
@@ -152,7 +147,7 @@ export class OseActorSheetCharacter extends OseActorSheet {
     // Delete Inventory Item
     html.find(".item-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      this.actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
       li.slideUp(200, () => this.render(false));
     });
 
