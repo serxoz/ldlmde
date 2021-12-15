@@ -31,8 +31,9 @@ export const augmentTable = (table, html, data) => {
 };
 
 async function rollTreasure(table, options = {}) {
-  let percent = (chance) => {
-    let roll = new Roll("1d100").roll();
+  let percent = async (chance) => {
+    let roll = new Roll("1d100");
+    await roll.roll();
     return roll.total <= chance;
   };
   let templateData = {
