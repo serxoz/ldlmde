@@ -964,15 +964,6 @@
   display: block;
   position: absolute;
 }
-.ose.sheet.actor.character .encumbrance .encumbrance-breakpoint.encumbrance-25 {
-  left: 25%;
-}
-.ose.sheet.actor.character .encumbrance .encumbrance-breakpoint.encumbrance-50 {
-  left: 50%;
-}
-.ose.sheet.actor.character .encumbrance .encumbrance-breakpoint.encumbrance-75 {
-  left: 75%;
-}
 .ose.sheet.actor.character .encumbrance .arrow-up {
   bottom: 0;
   width: 0;

@@ -53,10 +53,10 @@ export class OseActorSheet extends ActorSheet {
     var sortedSpells = {};
     var slots = {};
     for (var i = 0; i < spells.length; i++) {
-      let lvl = spells[i].data.lvl;
+      let lvl = spells[i].data.data.lvl;
       if (!sortedSpells[lvl]) sortedSpells[lvl] = [];
       if (!slots[lvl]) slots[lvl] = 0;
-      slots[lvl] += spells[i].data.memorized;
+      slots[lvl] += spells[i].data.data.memorized;
       sortedSpells[lvl].push(spells[i]);
     }
     data.slots = {
@@ -128,9 +128,9 @@ export class OseActorSheet extends ActorSheet {
 
     html.find(".saving-throw .attribute-name a").click((ev) => {
       let actorObject = this.actor;
-      let element = event.currentTarget;
+      let element = ev.currentTarget;
       let save = element.parentElement.parentElement.dataset.save;
-      actorObject.rollSave(save, { event: event });
+      actorObject.rollSave(save, { event: ev });
     });
 
     html.find(".item .item-controls .item-show").click(async (ev) => {
@@ -163,7 +163,7 @@ export class OseActorSheet extends ActorSheet {
 
     html.find(".attack a").click((ev) => {
       let actorObject = this.actor;
-      let element = event.currentTarget;
+      let element = ev.currentTarget;
       let attack = element.parentElement.parentElement.dataset.attack;
       const rollData = {
         actor: this.data,

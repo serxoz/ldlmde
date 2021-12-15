@@ -239,6 +239,9 @@
   "OSE.spells.Level": "Nivel",
   "OSE.spells.Save": "Salvación",
   "OSE.spells.ResetSlots": "Reinicia los Huecos de Hechizos",
+  "OSE.spells.MemorizedSlotsHint": "Huecos memorizados",
+  "OSE.spells.MaximumSlotsHint": "Huecos disponibles",
+
 
   "OSE.abilities.Requirements": "Requisitos",
 
