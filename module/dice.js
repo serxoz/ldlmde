@@ -1,5 +1,3 @@
-import {OseRoll} from "./roll.js";
-
 export class OseDice {
   static digestResult(data, roll) {
     let result = {
@@ -55,6 +53,8 @@ export class OseDice {
     chatMessage = true,
   } = {}) {
 
+    const tempalte = "systems/ldlmde/templates/chat/roll-result.html";
+
     let chatData = {
       user: game.user._id,
       speaker: speaker,
@@ -75,53 +75,53 @@ export class OseDice {
     const roll = new OseRoll(parts.join("+"), data).toMessage();
 
     // Convert the roll to a chat message and return the roll
-    // let rollMode = game.settings.get("core", "rollMode");
-    // rollMode = form ? form.rollMode.value : rollMode;
+    let rollMode = game.settings.get("core", "rollMode");
+    rollMode = form ? form.rollMode.value : rollMode;
 
     // Force blind roll (ability formulas)
-    // if (!form && data.roll.blindroll) {
-    //   rollMode = game.user.isGM ? "selfroll" : "blindroll";
-    // }
+    if (!form && data.roll.blindroll) {
+      rollMode = game.user.isGM ? "selfroll" : "blindroll";
+    }
 
-    // if (["gmroll", "blindroll"].includes(rollMode))
-    //   chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
-    // if (rollMode === "selfroll") chatData["whisper"] = [game.user._id];
-    // if (rollMode === "blindroll") {
-    //   chatData["blind"] = true;
-    //   data.roll.blindroll = true;
-    // }
+    if (["gmroll", "blindroll"].includes(rollMode))
+      chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
+    if (rollMode === "selfroll") chatData["whisper"] = [game.user._id];
+    if (rollMode === "blindroll") {
+      chatData["blind"] = true;
+      data.roll.blindroll = true;
+    }
 
-    // templateData.result = OseDice.digestResult(data, roll);
+    templateData.result = OseDice.digestResult(data, roll);
 
-    // return new Promise((resolve) => {
-    //   roll.render().then((r) => {
-    //     templateData.rollOSE = r;
-    //     renderTemplate(template, templateData).then((content) => {
-    //       chatData.content = content;
-    //       // Dice So Nice
-    //       if (game.dice3d) {
-    //         game.dice3d
-    //           .showForRoll(
-    //             roll,
-    //             game.user,
-    //             true,
-    //             chatData.whisper,
-    //             chatData.blind
-    //           )
-    //           .then((displayed) => {
-    //             if(chatMessage !== false)
-    //                 ChatMessage.create(chatData);
-    //             resolve(roll);
-    //           });
-    //       } else {
-    //         chatData.sound = CONFIG.sounds.dice;
-    //         if(chatMessage !== false)
-    //             ChatMessage.create(chatData);
-    //         resolve(roll);
-    //       }
-    //     });
-    //   });
-    // });
+    return new Promise((resolve) => {
+      roll.render().then((r) => {
+        templateData.rollOSE = r;
+        renderTemplate(template, templateData).then((content) => {
+          chatData.content = content;
+          // Dice So Nice
+          if (game.dice3d) {
+            game.dice3d
+              .showForRoll(
+                roll,
+                game.user,
+                true,
+                chatData.whisper,
+                chatData.blind
+              )
+              .then((displayed) => {
+                if(chatMessage !== false)
+                    ChatMessage.create(chatData);
+                resolve(roll);
+              });
+          } else {
+            chatData.sound = CONFIG.sounds.dice;
+            if(chatMessage !== false)
+                ChatMessage.create(chatData);
+            resolve(roll);
+          }
+        });
+      });
+    });
   }
 
   static digestAttackResult(data, roll) {
@@ -198,7 +198,7 @@ export class OseDice {
     // Optionally include a situational bonus
     if (form !== null && form.bonus.value) parts.push(form.bonus.value);
 
-    const roll = new Roll(parts.join("+"), data).roll();
+    const roll = new Roll(parts.join("+"), data).roll({async: false});
     const dmgRoll = new Roll(data.roll.dmg.join("+"), data).roll();
 
     // Convert the roll to a chat message and return the roll
